@@ -17,7 +17,7 @@ export class HeroesComponent implements OnInit {
 
   selectedHero: Hero;
   onSelect(hero: Hero): void {
-    console.log(hero);
+    console.log("hero  -> for git stash sake ",hero);
     this.selectedHero = hero;
   }
 
