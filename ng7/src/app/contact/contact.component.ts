@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit , Input } from '@angular/core';
 
 @Component({
   selector: 'app-contact',
@@ -7,9 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactComponent implements OnInit {
 
+
+  @Input() personsList:string[];
   constructor() { }
 
   ngOnInit() {
+    console.log("Persons LIst in Contact Component from Persons Component",this.personsList);
   }
 
 }
