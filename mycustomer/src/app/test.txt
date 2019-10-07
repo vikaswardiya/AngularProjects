@@ -1,1 +1,8 @@
 this is to check git comands
+
+
+Vikas is changing this file to check the pull operation
+Here is some more text written by me. 
+this is the last line I am writing
+I lied,
+actually this is the last line i am typing. 
