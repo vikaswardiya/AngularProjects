@@ -1,0 +1,10 @@
+<mat-toolbar color="primary">
+    <mat-icon>supervised_user_circle</mat-icon>&nbsp;MyCustomer&nbsp;
+    <button routerLink="/customer/bookroom" mat-button>Book</button>
+    <button routerLink="/customer/booklist" mat-button>List</button>
+    <span class="example-spacer"></span>
+    <button mat-button (click)="logout()">Log out</button>
+    <button mat-button routerLink="">Login
+        <mat-icon>account_circle</mat-icon>
+    </button>
+</mat-toolbar>

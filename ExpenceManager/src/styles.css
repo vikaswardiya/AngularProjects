@@ -1,0 +1,81 @@
+/* You can add global styles to this file, and also import other style files */
+
+body {
+  padding: 10px;
+  margin: 10px;
+  border-style: groove;
+  background-color: rgb(101, 202, 168);
+  border-radius: 10px;
+  border-color: brown;
+  color: white;
+}
+
+option {
+  color: black;
+}
+
+select {
+  width: 100%;
+}
+
+.addnew {
+  display: flex;
+  margin: 5px;
+  float: right;
+}
+.addnew:hover {
+  border-bottom-color:rgb(30, 196, 146);
+  /* border-bottom-color: linear-gradient(
+    to left right,
+    rgb(30, 196, 146),
+    yellow
+  ); */
+  border-bottom-style: groove;
+  border-spacing: 1px;
+}
+
+.space{
+    margin-top: 20px;
+    /* padding-top: 5px; */
+}
+
+.addnew:hover span {
+  background-color: rgb(30, 196, 146);
+  border-spacing: 1px;
+}
+
+.red{
+  color:red;
+}
+
+table{
+  /* background-color: darkcyan; */
+  padding-top: 8px;
+  margin-top: 10px;
+    border-style: inset;
+    border-radius: 7px;
+    box-shadow: 3px 6px 7px #3233;
+}
+.badge:active {
+  vertical-align: bottom;
+  padding: 4px 7px 3px;
+  background-color: rgb(16, 99, 74);
+}
+
+/* .badge:hover ~ .addnew {
+    background: #ccc;
+    border-bottom-color:red;
+} */
+
+.badge {
+  font-size: 17px;
+}
+
+.addnew input {
+  background-color: inherit;
+  border-style: none;
+}
+
+.addnew input:focus {
+  outline: none;
+}

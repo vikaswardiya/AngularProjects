@@ -1,0 +1,27 @@
+/* .container{
+    width:100%;
+    display: inline-block;
+}
+
+.navarea{
+    width: 18%;
+    height: 600px;
+    background-color: burlywood;
+    padding:5px;
+    margin:2px;
+    display: inline-block;
+  }
+  
+  .tablearea{
+    width: 70%;
+    display: inline-block;
+    
+    
+
+  } */
+
+  table{
+      margin:5px;
+      padding:5px;
+      width:100%;
+  }

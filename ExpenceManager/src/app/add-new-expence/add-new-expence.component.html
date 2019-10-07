@@ -1,0 +1,142 @@
+<div class="container-fluid">
+    <section>
+        <header class="text-center">
+            <h2>Personal Expense Manager</h2>
+        </header>
+    </section>
+    <hr />
+    <section>
+        <div>
+            <div class="col-md-12">
+                <div class="col-sm-6">
+                    <h3>Add New</h3>
+                </div>
+                <div class="col-sm-6">
+                    <div class="col-sm-2"></div>
+                    <div class="col-sm-6">
+                        <span class="addnew">
+                            <input type="text" placeholder="Add a friend" [(ngModel)]="myMsg"><span class="badge"
+                                (click)="addTouserlist()">+</span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <form [formGroup]="expenseForm" (ngSubmit)="submitForm()">
+                <div class="col-sm-12">
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <div class="col-sm-2">
+                                <label for="type">Type</label>
+                            </div>
+                            <div class="col-sm-6">
+                                <select class="select form-control dropdown-content" formControlName="type"
+                                    [ngClass]="{ 'is-invalid': submitted && f.type.errors }">
+                                    <option>Online</option>
+                                    <option selected>Cash</option>
+                                </select>
+                                <small *ngIf="submitted && f.type.errors" class="invalid-feedback">
+                                    <div *ngIf="f.type.errors.required" class="red">type is required</div>
+                                </small>
+
+                                <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
+                                else.</small> -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <div class="col-sm-2">
+                                <label for="name">Add Friend</label>
+                            </div>
+                            <div class="col-sm-6">
+                                <select class="select form-group dropdown-content" formControlName="name"
+                                    multiple="multiple" [(ngModel)]="name"
+                                    [ngClass]="{ 'is-invalid': submitted && f.name.errors }">
+                                    <option *ngFor="let item of userdata" [value]='item.name'>{{item.name[0]}}</option>
+                                </select>
+                                <small *ngIf="submitted && f.name.errors" class="invalid-feedback">
+                                    <div *ngIf="f.name.errors.required" class="red">Please mentioned friend name</div>
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12">
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <div class="col-sm-2">
+                                <label for="purpose">Purpose</label>
+                            </div>
+                            <div class="col-sm-6">
+                                <input type="email" class="form-control" id="purpose"
+                                    [ngClass]="{ 'is-invalid': submitted && f.purpose.errors }"
+                                    placeholder="What did you spend on" formControlName="purpose">
+                                <small *ngIf="submitted && f.purpose.errors" class="invalid-feedback red">
+                                    <div *ngIf="f.purpose.errors.required">Please mentioned purpose.</div>
+                                    <div *ngIf="f.purpose.errors.minlength">Minimum 6 character is required.</div>
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <div class="col-sm-2">
+                                <label for="Password">Date</label>
+                            </div>
+                            <div class="col-sm-6">
+                                <input type="date" class="form-control" formControlName="Date"
+                                    [ngClass]="{ 'is-invalid': submitted && f.Date.errors }">
+                                <small *ngIf="submitted && f.Date.errors" class="invalid-feedback">
+                                    <div *ngIf="f.Date.errors.required" class="red">Date is required</div>
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12 space">
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <div class="col-sm-2">
+                                <label for="exampleInputEmail1">currency</label>
+                            </div>
+                            <div class="col-sm-6">
+                                <select class="select form-control dropdown-content" formControlName="currency"
+                                    [ngClass]="{ 'is-invalid': submitted && f.currency.errors }">
+                                    <option>Dollars</option>
+                                    <option selected>Euro</option>
+                                    <option>Rupee</option>
+                                    <option>Yen</option>
+                                    <option>Reyaad</option>
+                                </select>
+                                <small *ngIf="submitted && f.currency.errors" class="invalid-feedback">
+                                    <div *ngIf="f.currency.errors.required" class="red">currency is required</div>
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <div class="col-sm-2">
+                                <label for="Amount">Amount</label>
+                            </div>
+                            <div class="col-sm-6">
+                                <input type="number" class="form-control" id="Amount" formControlName="Amount"
+                                    placeholder="Amount" [ngClass]="{ 'is-invalid': submitted && f.Amount.errors }">
+                                <small *ngIf="submitted && f.Amount.errors" class="invalid-feedback">
+                                    <div *ngIf="f.Amount.errors.required" class="red">Amount is required</div>
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12 space">
+                    <div class="col-sm-2">
+                        <button type="submit" class="btn btn-small btn-primary">Add New
+                            Expense</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <hr />
+    </section>
+</div>

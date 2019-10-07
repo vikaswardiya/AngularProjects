@@ -1,0 +1,20 @@
+<table id="tableSortExample" class="table table-bordered">
+    <thead>
+        <tr>
+            <th *ngFor="let head of headElemnets; let i = index" aria-controls="tableSortExample" scope="col">
+                {{head | titlecase}}
+                <!-- <mdb-icon fas icon="sort"></mdb-icon> -->
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let el of elements; let i = index">
+            <th scope="row">{{el.name}}</th>
+            <td>{{el.currency}}</td>
+            <td>{{el.type}}</td>
+            <td>{{el.Date}}</td>
+            <td>{{el.purpose}}</td>
+            <td>{{el.Amount}}</td>
+        </tr>
+    </tbody>
+</table>
