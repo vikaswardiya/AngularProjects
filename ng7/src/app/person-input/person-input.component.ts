@@ -1,5 +1,5 @@
-import { Component, OnInit, Output } from '@angular/core';
-import { FormGroup , FormBuilder , Validators } from '@angular/forms';
+import { Component, OnInit, Output, ViewChild } from '@angular/core';
+import { FormGroup , FormBuilder , Validators, NgForm } from '@angular/forms';
 
 import { DataService } from '../data.service';
 
@@ -11,7 +11,8 @@ import { DataService } from '../data.service';
 export class PersonInputComponent implements OnInit {
 
   employeeForm: FormGroup;
-
+ 
+  
   constructor(private service: DataService , private fb:FormBuilder) { }
 
   enteredPersonName = '';
@@ -54,7 +55,7 @@ logKeyValuePairs(group: FormGroup):void {
   });
 }
 
-  ngOnInit() {
+  ngOnInit() {    
     this.employeeForm = this.fb.group({
       fullname: ['',[Validators.required , Validators.minLength(2),Validators.maxLength(10)]],
       email: [''],

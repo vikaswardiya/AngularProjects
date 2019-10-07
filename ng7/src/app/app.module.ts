@@ -13,6 +13,8 @@ import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { ActivateGuard } from './activate.guard';
+import { ViewDetailComponent } from './view-detail/view-detail.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +25,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     HomeComponent,
     PersonsComponent,
     PersonInputComponent,
+    ViewDetailComponent,
     
   ],
   imports: [
@@ -33,10 +36,8 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     HttpClientModule,
     BrowserAnimationsModule,
     NgbModule
-
-
   ],
-  providers: [],
+  providers: [ActivateGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
