@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
+        crossorigin="anonymous">
+    <!-- Our Custom CSS -->
+
+    <script src="Scripts/angular.min.js"></script>
+    <script src="Scripts/angular-route.js"></script>
+    <script src="Scripts/script.js"></script>
+    <link rel="stylesheet" href="Styles/style.css">
+    <!-- Font Awesome JS -->
+    <script src="Scripts/script.js"></script>
+    <script src="Scripts/studentService.js"></script>
+
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" crossorigin="anonymous"></script>
+    <title>Assigment Java R&D</title>
+</head>
+
+<body>
+    <div class="wrapper" ng-controller="mainController">
+        <!-- Sidebar  -->
+        <nav id="sidebar">
+            <div class="fixed-top">
+                <div class="sidebar-header">
+                    <h3>Bootstrap Sidebar</h3>
+                </div>
+
+                <ul class="">
+                    <p>Course Management</p>
+                    <li>
+                        <a ng-href="#home" ng-class="getClass('home')">Home</a>
+                    </li>
+                    <li>
+                        <a ng-href="#list" ng-class="getClass('list')">List</a>
+                    </li>
+                    <li>
+                        <a ng-href="#personal" ng-class="getClass('personal')">Personal</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Page Content  -->
+        <div id="content">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+                    <button type="button" id="sidebarCollapse" class="btn btn-info">
+                        <i class="fas fa-align-left"></i>
+                        <span>Toggle Sidebar</span>
+                    </button>
+                    <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="fas fa-align-justify"></i>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="nav navbar-nav ml-auto">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="#">Page</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Page</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Page</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Page</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <div id="home" class="container row">
+                <!-- <div ng-include="'Templates/home.html'"></div> -->
+                <div class="col-sm-8">
+                    <div ng-view></div>
+                </div>
+                <div class="col-sm-4">
+                    <div ng-include="'Templates/listStudents.html'"></div>
+                </div>
+            </div>
+
+            <!-- <div ng-view></div> -->
+            <!-- <div ng-include="'templates/home.html'"></div> -->
+        </div>
+    </div>
+
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar').toggleClass('active');
+            });
+        });
+    </script>
+
+</body>
+
+</html>
