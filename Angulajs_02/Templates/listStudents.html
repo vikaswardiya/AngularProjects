@@ -1,0 +1,14 @@
+<div ng-controller="listStudent">
+  <h4>Students List</h4>
+  <div>
+    <p ng-repeat="student in students track by $index">
+      {{$index+1}}&nbsp;) {{student.name}} , {{student.marks}}
+    </p>
+  </div>
+  <div>
+    {{students}}
+    <span>{{random}}</span>
+    <br>
+    <button ng-click="handlrandom()">Click </button>
+  </div>
+</div>
